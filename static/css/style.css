@@ -22,7 +22,7 @@ p {
 input {
 	padding: 9px;
 	border-radius: 5px;
-	width: 60px;
+	width: 70px;
 	box-shadow: 5px 5px 5px black;
 	margin-right: 10px;
 	vertical-align: top;
@@ -48,7 +48,9 @@ button:hover {
 .reset-btn {
 	margin: 15px;
 	width: 220px;
-	
+}
+.submit-btn {
+	width: 100px;
 }
 .wrapper {
 	margin-top: 50px;

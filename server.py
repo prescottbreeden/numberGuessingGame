@@ -10,6 +10,8 @@ def index():
 	if 'guess' not in session:
 		session['game_status'] = "Can you guess my number?"
 		session['style'] = 'green'
+	if 'counter' not in session:
+		session['counter'] = 0
 	return render_template('index.html')
 
 @app.route('/process', methods=['POST'])
@@ -17,6 +19,7 @@ def game():
 	session['guess']=request.form['guess']
 	guess = int(session['guess'])
 	session.modified = True
+	session['counter']+=1
 	
 	if guess == session['myNumber']:
 		session['game_status'] = "That's right!"
