@@ -29,9 +29,11 @@ input {
 	font-size: 20px;
 	text-align: center;
 }
-
+table {
+	margin: 0 auto;
+}
 button {
-	padding: 10px;
+	padding: 11px;
 	font-family: 'Itim', cursive;
 	background-color: steelblue;
 	color: #EEEEEE;
@@ -66,4 +68,16 @@ button:hover {
 
 .red {
 	background-color: rgb(255, 89, 52);
+}
+.gold {
+	color: gold;
+}
+.silver {
+	color: silver;
+}
+.bronze {
+	color: brown;
+}
+.no-trophy {
+	opacity: 0;
 }

@@ -10,6 +10,7 @@ def index():
 	if 'guess' not in session:
 		session['game_status'] = "Can you guess my number?"
 		session['style'] = 'green'
+		session['trophy-color'] = 'no-trophy'
 	if 'counter' not in session:
 		session['counter'] = 0
 	return render_template('index.html')
@@ -24,6 +25,15 @@ def game():
 	if guess == session['myNumber']:
 		session['game_status'] = "That's right!"
 		session['style'] = 'green'
+		if session['counter'] <= 5:
+			session['trophy'] = 'GOLD MEDAL'
+			session['trophy-color'] = 'gold'
+		elif session['counter'] <= 7:
+			session['trophy'] = 'SILVER MEDAL'
+			session['trophy-color'] = 'silver'
+		elif session['counter'] > 7:
+			session['trophy'] = 'BRONZE MEDAL'
+			session['trophy-color'] = 'bronze'
 	elif guess < session['myNumber']:
 		session['game_status'] = "Too low..."
 		session['style'] = 'red'

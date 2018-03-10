@@ -3,6 +3,7 @@
 <head>
 	<title>Great Number Game</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -13,11 +14,15 @@
 		</div>
 		<br>
 		<form method="post" action="/process">
-			<input type="text" name="guess" autofocus="autofocus" autocomplete="off">
-			<!-- <input type="submit" value="SUBMIT" class='btn'> -->
-			<button class="submit-btn" type="submit">ENTER</button>
+			<table>
+				<tr>
+					<td><input type="text" name="guess" autofocus="autofocus" autocomplete="off"></td>
+					<td><button class="submit-btn" type="submit">ENTER</button></td>
+				</tr>
+			</table>
 		</form>
 		<p>Attempts: {{session['counter']}}</p>
+		<p class="{{session['trophy-color']}}"><i class="fas fa-trophy"></i> {{session['trophy']}} <i class="fas fa-trophy"></i></p>
 		<form action="/clear" method="post">
 			<button class="reset-btn" type="submit">RESET GAME</button>
 		</form>
